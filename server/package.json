@@ -1,0 +1,27 @@
+{
+  "name": "data-access-layer",
+  "version": "1.0.0",
+  "description": "Backend layer using express.js to access mongo db for managing the users database and supporting CRUD operations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Shiri Rave",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongo-express": "^1.0.0-alpha.4",
+    "mongoose": "^6.2.8",
+    "mongoose-type-email": "^1.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shuroo/aligned-exercise-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shuroo/aligned-exercise-server/issues"
+  },
+  "homepage": "https://github.com/shuroo/aligned-exercise-server#readme"
+}
