@@ -24,10 +24,8 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 app.get('/', (req, res) => {
     res.send('Hello World!')
 });
-app.get('/express_backend', (req, res) => { //Line 9
-    res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' }); //Line 10
-});
 
-app.use('/api', movieRouter)
+// The API prefix
+app.use('/users', movieRouter)
 
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))

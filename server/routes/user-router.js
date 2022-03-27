@@ -10,9 +10,9 @@ expressApp.use(cors());
 
 expressApp.use(express.json());
 
-router.post('/users/add', UserCtrl.createUser)
-router.put('/users/status', UserCtrl.setUserStatus)
-router.delete('/users/delete/:id', UserCtrl.deleteUser)
-router.get('/users', UserCtrl.getUsers)
+router.post('/add', UserCtrl.createUser)
+router.post('/status', UserCtrl.setUserStatus)
+router.delete('/delete/:id', UserCtrl.deleteUser)
+router.get('/', UserCtrl.getUsers)
 
 module.exports = router
