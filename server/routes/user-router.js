@@ -13,7 +13,6 @@ expressApp.use(express.json());
 router.post('/users/add', UserCtrl.createUser)
 router.put('/users/status', UserCtrl.setUserStatus)
 router.delete('/users/delete/:id', UserCtrl.deleteUser)
-    //router.get('/user/:id', UserCtrl.getUserById)
 router.get('/users', UserCtrl.getUsers)
 
 module.exports = router
