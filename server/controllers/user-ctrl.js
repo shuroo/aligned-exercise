@@ -6,23 +6,8 @@ let headers = new fetch.Headers();
 headers.append('Content-Type', 'application/json');
 headers.append('Accept', 'application/json');
 
-// headers.append('Authorization', 'Basic ' + base64.encode(username + ":" + password));
-
-// constructHeaders = () => {
-//     let headers = new fetch.Headers();
-//     headers.append('Authorization', 'Basic ' + base64.encode(username + ":" + password));
-//     headers.append('Content-Type', 'application/json');
-//     headers.append('Accept', 'application/json');
-//     return headers;
-// }
-
 createUser = (req, res) => {
     const body = req.body
-        // let headers = new Headers();
-        // headers.append('Authorization', 'Basic ' + base64.encode(username + ":" + password));
-        // headers.append('Content-Type', 'application/json');
-        // headers.append('Accept', 'application/json');
-        // let headers = constructHeaders();
     if (!body) {
         return res.status(400).json({
             headers: headers,
@@ -66,7 +51,7 @@ setUserStatus = async(req, res) => {
         })
     }
     // req.params.id
-    UserModel.findOne({ _id: body.id }, (err, user) => {
+    UserModel.findOne({ _id: body._id }, (err, user) => {
         if (err) {
             return res.status(404).json({
                 headers: headers,
@@ -87,8 +72,8 @@ setUserStatus = async(req, res) => {
             })
             // Need to add 'clone' to mongoose due to the recent release notes - to avoid calling 'find' twice.
             // Reference: https://stackoverflow.com/questions/68945315/mongooseerror-query-was-already-executed 
-            .clone().catch(function(err) { console.log(err) })
-    })
+
+    }).clone().catch(function(err) { console.log(err) })
 }
 
 deleteUser = async(req, res) => {
